@@ -92,19 +92,21 @@ const WarehouseDetails = () =>{
             fourthHeader={'QUANTITY'} 
             fifthHeader={null}
             sixthHeader={'ACTIONS'}/>
-            {data.warehouseInventory.map((singleInventory) => {
-                return <InventoryListRow
-                fifthColumn={null}
-                itemID={singleInventory.id}
-                className={"warehouseDetails"}
-                item={singleInventory.itemName}
-                category={singleInventory.category}
-                description={singleInventory.description}
-                quantity={singleInventory.quantity}
-                status={singleInventory.status}
-                warehouseID={singleInventory.warehouseID}
-                key={singleInventory.id}/>
-            })}
+            <div className="warehouseDetail__wrapper-subContainer">
+                {data.warehouseInventory.map((singleInventory) => {
+                    return <InventoryListRow
+                    fifthColumn={null}
+                    itemID={singleInventory.id}
+                    className={"warehouseDetails"}
+                    item={singleInventory.itemName}
+                    category={singleInventory.category}
+                    description={singleInventory.description}
+                    quantity={singleInventory.quantity}
+                    status={singleInventory.status}
+                    warehouseID={singleInventory.warehouseID}
+                    key={singleInventory.id}/>
+                })}
+            </div>
             </div>
     )
 }

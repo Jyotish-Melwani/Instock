@@ -34,19 +34,21 @@ const WarehouseList = () =>{
              fourthHeader={'CONTACT INFORMATION'} 
              fifthHeader={null}
              sixthHeader={'ACTIONS'}/>
-            {data.map((singleWarehouse) => {
-                return <WarehouseRow
-                key={singleWarehouse.id}
-                id={singleWarehouse.id}
-                warehouseName={singleWarehouse.name}
-                address={singleWarehouse.address}
-                city={singleWarehouse.city}
-                country={singleWarehouse.country}
-                contact={singleWarehouse.contact.name}
-                phone={singleWarehouse.contact.phone}
-                email={singleWarehouse.contact.email}
-                onDataChange={requestWarehouseList}/>
-            })} 
+             <div className='warehouseList__wrapper-subContainer'>
+                {data.map((singleWarehouse) => {
+                    return <WarehouseRow
+                    key={singleWarehouse.id}
+                    id={singleWarehouse.id}
+                    warehouseName={singleWarehouse.name}
+                    address={singleWarehouse.address}
+                    city={singleWarehouse.city}
+                    country={singleWarehouse.country}
+                    contact={singleWarehouse.contact.name}
+                    phone={singleWarehouse.contact.phone}
+                    email={singleWarehouse.contact.email}
+                    onDataChange={requestWarehouseList}/>
+                })} 
+            </div>
         </div>
     )
 }
