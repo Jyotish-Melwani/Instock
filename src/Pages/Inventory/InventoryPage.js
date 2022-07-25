@@ -3,6 +3,7 @@ import InventoryItemDetails from '../../Components/InventoryItemDetails/Inventor
 import EditInventory from '../../Components/EditInventory/EditInventory';
 import PageHeader from "../../Components/Header/Header";
 import InventoryList from "../../Components/InventoryList/InventoryList";
+import AddInventory from "../../Components/AddInventory/AddInventory";
 import './InventoryPage.scss'
 
 function InventoryPage()  {
@@ -13,7 +14,7 @@ function InventoryPage()  {
         <div className="component-wrapper">
                 <Switch>
                     <Route path='/inventory' exact component={InventoryList} />
-                    <Route path='/inventory/add'  component='' /> 
+                    <Route path='/inventory/add'  component={AddInventory} /> 
                     <Route path='/inventory/edit/:id' component={EditInventory} />
                     <Route path='/inventory/:id'  component={InventoryItemDetails} />
                 </Switch>

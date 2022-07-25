@@ -68,7 +68,7 @@ const EditInventory = () => {
         }
     }
 
-    const handleSave = e => {
+    const handleSave = async e => {
         e.preventDefault();
         console.log(e);
         
@@ -105,8 +105,11 @@ const EditInventory = () => {
         
         console.log(itemDetails);
         if (window.confirm('Are you sure you want to update this Inventory Item?')) {
-            
-            axios.put(`http://localhost:8080/inventory/${params.id}`, itemDetails).then(res => console.log(res)).catch(err => console.log(err));
+            let detailsToSend = itemDetails;
+            if(detailsToSend.status === "Out Of Stock") {
+                detailsToSend.quantity = 0;
+            }
+            await axios.put(`http://localhost:8080/inventory/${params.id}`, detailsToSend).then(res => console.log(res)).catch(err => console.log(err));
             history.push(`/inventory/${params.id}`);
         };
     }
