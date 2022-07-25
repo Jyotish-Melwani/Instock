@@ -8,7 +8,9 @@ const PageHeader = (props) => {
     return (
         <nav className="page-header">
             <div className="page-header__logo-wrapper">
+            <Link to="/">
                 <img className="page-header__logo-img" src={logo} alt="instock logo"/>
+            </Link>
             </div>
             <div className="page-header__wrapper">
                 <Link 

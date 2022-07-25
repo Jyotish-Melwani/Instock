@@ -38,6 +38,8 @@ const InventoryList = () =>{
             <div className='inventoryList__wrapper-subContainer'> 
                 {data.map((singleInventory) => {
                     return <InventoryListRow 
+                    fifthColumn={'inventory'}
+                    className={'inventory'}
                     itemID={singleInventory.id}
                     item={singleInventory.itemName}
                     warehouseName={singleInventory.warehouseName}

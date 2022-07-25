@@ -62,6 +62,25 @@
             }
         }
 
+        // HEADER STYLING ONLY FOR WAREHOUSEDetails
+        &__warehouseDetails-container{
+            &--primary{
+                width: 25%;  
+            }
+            &--secondary{
+                width: 20%;
+            }
+            &--tertiary{
+                width: 20%;
+            }
+            &--quaternary{
+                width: 16%;
+            }
+            &--senary{
+                width: 9%;
+            }
+        }
+
         &__title{
             color: $color-slate;
             font-size: .875rem;
