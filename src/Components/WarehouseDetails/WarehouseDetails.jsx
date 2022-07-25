@@ -54,7 +54,7 @@ const WarehouseDetails = () =>{
                     <h2 className='inv-details__item'>{data.name}</h2>
                 </div>
                 <div className='inv-details__header-right'>
-                    <Link to = {`/inventory/edit/${params.id}`}>
+                    <Link to = {`/warehouse/edit/${params.id}`}>
                         <div className='inv-details__edit'>
                             <img src={editLogo} alt=''/>
                             <p>Edit</p>
