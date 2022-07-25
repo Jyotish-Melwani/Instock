@@ -48,7 +48,7 @@ const WarehouseDetails = () =>{
         <section className="warehouseDetail__wrapper">
             <div className='inv-details__header-wrapper'>
                 <div className='inv-details__header-left'>
-                    <Link to = {`/inventory`}>
+                    <Link to = {`/warehouse`}>
                         <div className='inv-details__back'></div>
                     </Link>
                     <h2 className='inv-details__item'>{data.name}</h2>
