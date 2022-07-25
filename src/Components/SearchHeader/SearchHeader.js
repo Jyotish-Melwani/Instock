@@ -1,6 +1,7 @@
-import SearchIcon from '../../Assets/Icons/search-24px.svg';
-import './SearchHeader.scss';
 import { Link } from 'react-router-dom';
+import SearchIcon from '../../Assets/Icons/search-24px.svg'
+import './SearchHeader.scss'
+
 
 const SearchHeader = (props) =>{  
     return(
