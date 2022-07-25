@@ -49,9 +49,7 @@ const AddWarehouse = () => {
 
       const warehousePostCall = axios.post('http://localhost:8080/warehouse', warehouseData);
       warehousePostCall
-        .then((response) => {
-          console.log(response);
-        })
+        .then((_response) => {})
         .catch((err) => {
           console.log(err);
         });
