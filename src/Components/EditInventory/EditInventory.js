@@ -70,7 +70,6 @@ const EditInventory = () => {
 
     const handleSave = async e => {
         e.preventDefault();
-        console.log(e);
         
         e.target[0].classList.remove('error-state');
         e.target[1].classList.remove('error-state');
@@ -103,13 +102,12 @@ const EditInventory = () => {
             return false;
         }
         
-        console.log(itemDetails);
         if (window.confirm('Are you sure you want to update this Inventory Item?')) {
             let detailsToSend = itemDetails;
             if(detailsToSend.status === "Out Of Stock") {
                 detailsToSend.quantity = 0;
             }
-            await axios.put(`http://localhost:8080/inventory/${params.id}`, detailsToSend).then(res => console.log(res)).catch(err => console.log(err));
+            await axios.put(`http://localhost:8080/inventory/${params.id}`, detailsToSend).then(_res => {}).catch(err => console.log(err));
             history.push(`/inventory/${params.id}`);
         };
     }
@@ -121,7 +119,6 @@ const EditInventory = () => {
     }
 
 
-    console.log( nameError, descError, quantityError);
     return (
         <section className='inv-edit__wrapper'>
             <div className='inv-edit__header-wrapper'>

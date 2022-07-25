@@ -25,7 +25,6 @@ const AddInventory = () => {
     const [quantityError, setQuantityError] = useState(false);
 
     useEffect (() => {
-        console.log('mounting');
         axios.get(`http://localhost:8080/warehouse/`).then(res => {
             setWarehouses(res.data);   
         });
@@ -113,7 +112,7 @@ const AddInventory = () => {
                 detailsToSend.quantity = 0;
             }    
 
-            await axios.post(`http://localhost:8080/inventory/`, detailsToSend).then(res => console.log(res)).catch(err => console.log(err));
+            await axios.post(`http://localhost:8080/inventory/`, detailsToSend).then(_res => {}).catch(err => console.log(err));
             history.push(`/inventory`);
         };
     }

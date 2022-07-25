@@ -128,7 +128,7 @@ const EditWarehouse = () => {
             
             const requestBody = warehouseDetails;
             requestBody.contact = contactDetails;
-            axios.put(`http://localhost:8080/warehouse/${params.id}`, requestBody).then(res => console.log(res)).catch(err => console.log(err));
+            axios.put(`http://localhost:8080/warehouse/${params.id}`, requestBody).then(_res => {}).catch(err => console.log(err));
             history.push(`/warehouse/${params.id}`);
         };
     }

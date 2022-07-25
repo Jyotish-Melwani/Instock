@@ -20,13 +20,9 @@ const WarehouseDetails = () =>{
         warehouseInventory: [],
     });
 
-    const [InventoryData] = useState([])
-
     useEffect(()=>{
         axios.get(`http://localhost:8080/warehouse/${params.id}`)
         .then(result =>{
-            // console.log(result.data)
-
             const UpdatedData = {};
 
             for (const key in data) {
@@ -34,9 +30,7 @@ const WarehouseDetails = () =>{
                     UpdatedData[key] = result.data[key];
                 }
             }
-            console.log(UpdatedData)
-
-            setData(UpdatedData)
+            setData(UpdatedData);
         })
         .catch(error =>{
             console.log(error)
