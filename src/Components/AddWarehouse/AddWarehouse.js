@@ -11,15 +11,14 @@ const AddWarehouse = () => {
   const [fieldRequiredMessage, setFieldRequiredMessage] = useState({});
 
   const errorHandler = (e) => {
-    const form = e.target.value;
 
-    setInputState({ ...inputState, [e.target.name]: form });
+    setInputState({ ...inputState, [e.target.name]: e.target.value });
 
     // updating state for error message display
 
-    if (form.value !== '') {
+    if (e.target.value.trim() !== '') {
       setFieldRequiredMessage({ ...fieldRequiredMessage, [e.target.name]: e.target.value });
-    } else if (form.value === '') {
+    } else if (e.target.value.trim() === '') {
       setFieldRequiredMessage({ ...fieldRequiredMessage, [e.target.name]: undefined });
     }
   };
