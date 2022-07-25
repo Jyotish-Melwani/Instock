@@ -77,7 +77,7 @@ const EditWarehouse = () => {
     }
     
     const handleCancel = () => {
-        if(window.confirm('Are yo sure you want to cancel and go back to the previous page?')) {
+        if(window.confirm('Are you sure you want to cancel and go back to the previous page?')) {
             history.push(`/warehouse/${params.id}`);
         }
     }
