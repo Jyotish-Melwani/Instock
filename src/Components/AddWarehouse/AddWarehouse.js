@@ -1,5 +1,5 @@
 import './AddWarehouse.scss';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
 import arrowIcon from '../../Assets/Icons/arrow_back-24px.svg';
 import warningIcon from '../../Assets/Icons/error-24px.svg';
@@ -7,6 +7,7 @@ import { emailValidator, phoneValidator } from '../Helper/Helper';
 import { useState } from 'react';
 
 const AddWarehouse = () => {
+  const history = useHistory();
   const [inputState, setInputState] = useState([]);
   const [fieldRequiredMessage, setFieldRequiredMessage] = useState({});
 
@@ -49,7 +50,9 @@ const AddWarehouse = () => {
 
       const warehousePostCall = axios.post('http://localhost:8080/warehouse', warehouseData);
       warehousePostCall
-        .then((_response) => {})
+        .then((_response) => {
+          history.push('/warehouse');
+        })
         .catch((err) => {
           console.log(err);
         });
