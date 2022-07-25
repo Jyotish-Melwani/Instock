@@ -7,7 +7,8 @@ import './WarehouseList.scss'
 
 const WarehouseList = () =>{
 
-    const [data, setData] = useState([])
+    const [data, setData] = useState([]);
+    const [searchedData, setSearchedData] = useState([]);
 
     useEffect(()=>{
         requestWarehouseList();
@@ -16,16 +17,29 @@ const WarehouseList = () =>{
     const requestWarehouseList = () => {
         axios.get('http://localhost:8080/warehouse')
         .then(result =>{
-            setData(result.data)
+            setData(result.data);
+            setSearchedData(result.data);
         })
         .catch(error =>{
             console.log(error)
         })
     }
 
+    const searchData = query => {
+        const newSearch = [];
+        const q = query.toLowerCase();
+
+        data.forEach(row => {
+            if (row.address.toLowerCase().match(q) || row.contact.name.toLowerCase().match(q) || row.contact.phone.toLowerCase().match(q) || row.contact.email.toLowerCase().match(q) || row.name.toLowerCase().match(q)) {
+                newSearch.push(row);
+            }
+        })
+        setSearchedData(newSearch);
+    }
+
     return(
         <div className='warehouseList__wrapper-container'>
-            <SearchHeader title={'Warehouses'} buttonText={'+ Add New Warehouse'} buttonLink={'/warehouse/add'}/>
+            <SearchHeader title={'Warehouses'} searchData={searchData} buttonText={'+ Add New Warehouse'} buttonLink={'/warehouse/add'}/>
             <TableHeader
              className={'warehouseList'}
              firstHeader={'WAREHOUSE'} 
@@ -35,7 +49,7 @@ const WarehouseList = () =>{
              fifthHeader={null}
              sixthHeader={'ACTIONS'}/>
              <div className='warehouseList__wrapper-subContainer'>
-                {data.map((singleWarehouse) => {
+                {searchedData.map((singleWarehouse) => {
                     return <WarehouseRow
                     key={singleWarehouse.id}
                     id={singleWarehouse.id}
