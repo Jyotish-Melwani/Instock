@@ -1,5 +1,4 @@
 import { Switch, Route } from "react-router-dom";
-import Footer from "../../Components/Footer/Footer";
 import WarehouseList from "../../Components/WarehouseList/WarehouseList";
 import "./WarehousePage.scss";
 import EditWarehouse from '../../Components/EditWarehouse/EditWarehouse.jsx';

@@ -89,7 +89,7 @@ const EditWarehouse = () => {
         let foundError = false;
 
         // For left panel
-        const updatedErrorStateWarehouse = { ... fieldErrorWarehouse};
+        const updatedErrorStateWarehouse = { ...fieldErrorWarehouse};
         for (let i = 0; i < 4; i++) {
             if (e.target[i].value.trim() === '') { 
                 e.target[i].classList.add('error-state');
@@ -105,7 +105,7 @@ const EditWarehouse = () => {
         setFieldErrorWarehouse(updatedErrorStateWarehouse);
 
         // For right panel
-        const updatedErrorStateContact = { ... fieldErrorContact};
+        const updatedErrorStateContact = { ...fieldErrorContact};
         for (let i = 4; i < 8; i++) {
             if (e.target[i].value.trim() === '') { 
                 e.target[i].classList.add('error-state');

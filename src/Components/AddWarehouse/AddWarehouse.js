@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import arrowIcon from '../../Assets/Icons/arrow_back-24px.svg';
 import warningIcon from '../../Assets/Icons/error-24px.svg';
-import { emailValidator, phoneValidator, valueCheck } from '../Helper/Helper';
-import { useState, useEffect } from 'react';
+import { emailValidator, phoneValidator } from '../Helper/Helper';
+import { useState } from 'react';
 
 const AddWarehouse = () => {
   const [inputState, setInputState] = useState([]);
@@ -64,7 +64,7 @@ const AddWarehouse = () => {
       <section className='add-warehouse__wrapper'>
         <div className='add-warehouse__add-wh-header'>
           <Link to='/warehouse'>
-            <img src={arrowIcon} />
+            <img src={arrowIcon} alt=''/>
           </Link>
           <h1 className='add-warehouse__add-wh-heading'>Add a New Warehouse</h1>
         </div>
@@ -85,7 +85,7 @@ const AddWarehouse = () => {
                 onChange={errorHandler}
                 id='name-form'
                 name='warehouseName'
-                placeholder='Warehouse name'
+                placeholder='Warehouse Name'
               />
               <div
                 className={
@@ -179,7 +179,7 @@ const AddWarehouse = () => {
                 onChange={errorHandler}
                 id='contact-name-form'
                 name='contact'
-                placeholder='Contact name'
+                placeholder='Contact Name'
               />
               <div
                 className={
@@ -225,7 +225,7 @@ const AddWarehouse = () => {
                 onChange={errorHandler}
                 id='phone-number-form'
                 name='phone'
-                placeholder='Phone number'
+                placeholder='Phone Number'
               />
               <div
                 className={
@@ -265,7 +265,7 @@ const AddWarehouse = () => {
               Cancel
             </Link>
 
-            <input type='submit' id='submit-button' value='+ Add warehouse' />
+            <input type='submit' id='submit-button' value='+ Add Warehouse' />
           </div>
         </form>
       </section>

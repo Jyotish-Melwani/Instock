@@ -1,5 +1,6 @@
-import SearchIcon from '../../Assets/Icons/search-24px.svg'
-import './SearchHeader.scss'
+import SearchIcon from '../../Assets/Icons/search-24px.svg';
+import './SearchHeader.scss';
+import { Link } from 'react-router-dom';
 
 const SearchHeader = (props) =>{  
     return(
@@ -15,7 +16,9 @@ const SearchHeader = (props) =>{
                             <img className='searchHeader__input-icon' src={SearchIcon} alt="Search Magnifying Glass Icon" />
                         </div>
                         <div className='searchHeader__button-container'>
-                            <button className='searchHeader__button'>{props.buttonText}</button>
+                            <Link to={props.buttonLink}>
+                                <button className='searchHeader__button'>{props.buttonText}</button>
+                            </Link>
                         </div>
                     </div>
                 </div>

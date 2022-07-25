@@ -25,7 +25,7 @@ const WarehouseList = () =>{
 
     return(
         <div className='warehouseList__wrapper-container'>
-            <SearchHeader title={'Warehouses'} buttonText={'+ Add New Warehouse'}/>
+            <SearchHeader title={'Warehouses'} buttonText={'+ Add New Warehouse'} buttonLink={'/warehouse/add'}/>
             <TableHeader
              className={'warehouseList'}
              firstHeader={'WAREHOUSE'} 
