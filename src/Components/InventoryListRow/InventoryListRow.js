@@ -11,6 +11,7 @@ import ModalDialog from './../ModalDialog/ModalDialog.jsx';
 const InventoryListRow = (props) => {  
 
     const statusTextElement = useRef([])
+    const warehouseColumn = useRef([])
     const [showModalDialog, setShowModalDialog] = useState(false);
 
     useEffect(()=>{
@@ -18,6 +19,9 @@ const InventoryListRow = (props) => {
             statusTextElement.current.classList.add('inventoryListRow__status--active')
         } else{
             statusTextElement.current.classList.add('inventoryListRow__status--inactive')
+        }
+        if (props.fifthColumn === null){
+            warehouseColumn.current.classList.add('inventoryListRow__container--hidden')
         }
     })
 
@@ -50,7 +54,7 @@ const InventoryListRow = (props) => {
                 onDelete={deleteInventoryCallback}>
             </ModalDialog>
             <div className='inventoryListRow'>
-                <div className='inventoryListRow__container inventoryListRow__container--primary'>
+                <div className={`inventoryListRow__container inventoryListRow__${props.className}-container--primary`}>
                     <div className='inventoryListRow__header-container'>
                         <p className='inventoryListRow__header'>INVENTORY ITEM</p>
                     </div>
@@ -61,7 +65,7 @@ const InventoryListRow = (props) => {
                         </Link>
                     </div>
                 </div>
-                <div className='inventoryListRow__container inventoryListRow__container--secondary'>
+                <div className={`inventoryListRow__container inventoryListRow__${props.className}-container--secondary`}>
                     <div className='inventoryListRow__header-container'>
                         <p className='inventoryListRow__header'>CATEGORY</p>
                     </div>
@@ -69,7 +73,7 @@ const InventoryListRow = (props) => {
                         <p className='inventoryListRow__text'>{props.category}</p>
                     </div>
                 </div>
-                <div className='inventoryListRow__container inventoryListRow__container--tertiary'>
+                <div className={`inventoryListRow__container inventoryListRow__${props.className}-container--tertiary`}>
                     <div className='inventoryListRow__header-container'>
                         <p className='inventoryListRow__header'>STATUS</p>
                     </div>
@@ -77,7 +81,7 @@ const InventoryListRow = (props) => {
                         <p className='inventoryListRow__text inventoryListRow__status'ref={statusTextElement}>{props.status}</p>
                     </div>
                 </div>
-                <div className='inventoryListRow__container inventoryListRow__container--quaternary'>
+                <div className={`inventoryListRow__container inventoryListRow__${props.className}-container--quaternary`}>
                     <div className='inventoryListRow__header-container'>
                         <p className='inventoryListRow__header'>QTY</p>
                     </div>
@@ -85,7 +89,7 @@ const InventoryListRow = (props) => {
                         <p className='inventoryListRow__text'>{props.quantity}</p>
                     </div>
                 </div>
-                <div className='inventoryListRow__container inventoryListRow__container--quinary'>
+                <div className={`inventoryListRow__container inventoryListRow__${props.className}-container--quinary`} ref={warehouseColumn}>
                     <div className='inventoryListRow__header-container'>
                         <p className='inventoryListRow__header'>WAREHOUSE</p>
                     </div>
@@ -93,7 +97,7 @@ const InventoryListRow = (props) => {
                         <p className='inventoryListRow__text'>{props.warehouseName}</p>
                     </div>
                 </div>
-                <div className='inventoryListRow__container inventoryListRow__container--senary'>
+                <div className={`inventoryListRow__container inventoryListRow__${props.className}-container--senary`}>
                     <img className='inventoryListRow__image' src={BinIcon} onClick={openModalDialog} alt="Garbage Bin Icon Button" />
                     <Link className='inventoryListRow__link-edit' to={`/inventory/edit/${props.itemID}`}>    
                         <img className='inventoryListRow__image' src={PencilIcon} alt="Pencil Icon Button" />

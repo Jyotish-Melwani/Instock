@@ -17,6 +17,13 @@
         display: flex;
         flex-direction: column;  
 
+        &--hidden{
+            display: none;
+        }
+
+    }
+
+    &__inventory-container{
         &--primary{
             order: 1;
             width: 50%;
@@ -35,6 +42,33 @@
         }
         &--quinary{
             order: 5;
+            width: 50%;
+        }
+        &--senary{
+            order: 6;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-top: 1rem;
+        }
+    }
+
+    &__warehouseDetails-container{
+        &--primary{
+            order: 1;
+            width: 50%;
+        }
+        &--secondary{
+            order: 3;
+            width: 50%;
+        }
+        &--tertiary{
+            order: 2;
+            width: 50%;
+        }
+        &--quaternary{
+            order: 4;
             width: 50%;
         }
         &--senary{
@@ -95,10 +129,6 @@
         text-decoration: none;
     }
 
-    &__link-edit{
-        text-decoration: none;
-    }
-
     &__icon{     
         height: 1.3rem;
         &:hover{
@@ -123,7 +153,9 @@
 
         &__container{
             display: flex;
-   
+        }
+
+        &__inventory-container{
             &--primary{
                 order: 1;
                 width: 19%;  
@@ -159,6 +191,35 @@
             }
         }
 
+        &__warehouseDetails-container{
+            &--primary{
+                width: 27%;  
+                order: 1;
+            }
+            &--secondary{
+                width: 22%;
+                order: 2;
+            }
+            &--tertiary{
+                width: 23%;
+                order: 3;
+            }
+            &--quaternary{
+                width: 18%;
+                order: 4;
+            }
+            &--senary{
+                width: 9%;
+                order: 5;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                margin: 0;
+                width: 9%;
+            }
+            
+        }
+
         &__header-container{
             display: none;
         }
@@ -174,9 +235,14 @@
 
     @include desktop {
 
-        &__container{
+        &__inventory-container{
             &--senary{
                 width: 7%;
+            }
+        }
+        &__warehouseDetails-container{
+            &--senary{
+                width: 9%;
             }
         }
         &__status{

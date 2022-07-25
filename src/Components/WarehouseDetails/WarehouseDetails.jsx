@@ -94,6 +94,7 @@ const WarehouseDetails = () =>{
             sixthHeader={'ACTIONS'}/>
             {data.warehouseInventory.map((singleInventory) => {
                 return <InventoryListRow
+                fifthColumn={null}
                 itemID={singleInventory.id}
                 className={"warehouseDetails"}
                 item={singleInventory.itemName}
