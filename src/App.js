@@ -9,8 +9,8 @@ function App() {
     <BrowserRouter>
       <Switch>
         <Route path='/' exact component={WarehousePage} />
-        <Route path='/warehouse'  component={WarehousePage}/>
-        <Route path='/inventory' component={InventoryPage}/>
+        <Route path='/warehouse' component={WarehousePage} />
+        <Route path='/inventory' component={InventoryPage} />
       </Switch>
       <Footer />
     </BrowserRouter>

@@ -26,7 +26,7 @@ const InventoryList = () =>{
 
     return(
         <div className='inventoryList__wrapper-container'>
-            <SearchHeader title={'Inventory'} buttonText={'+ Add New Item'}/>
+            <SearchHeader title={'Inventory'} buttonText={'+ Add New Item'} buttonLink={'/inventory/add'}/>
             <TableHeader
              className={'inventoryList'}
              firstHeader={'INVENTORY ITEM'} 
