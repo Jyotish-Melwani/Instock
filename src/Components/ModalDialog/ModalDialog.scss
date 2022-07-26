@@ -1,0 +1,133 @@
+@use '../../Styles/Partials/variables' as *;
+@use '../../Styles/Partials/mixins' as*;
+@use '../../Styles/Partials/fonts' as*;
+
+.modal-dialog {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    border: 1px solid #ccc;
+    background: #fff;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 4px;
+    outline: none;
+    padding: 20px;
+
+    height: 100vh;
+
+    @include tablet {
+        height: auto;
+        /* Height: Banner height
+         * Width: Picked based on trial and error */
+        margin: 11.375rem calc((100vw - 42rem) / 2) 0 calc((100vw - 42rem) / 2);
+    } 
+
+    &__overlay {
+        z-index: 1000;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(255, 255, 255, 0.75)
+    }
+
+    &__close {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    &__mobile-spacer {
+        flex-grow: 1;
+
+        @include tablet {
+            flex-grow: 0;
+        } 
+    }
+
+    &__button-row {
+        display: flex;
+
+        justify-content: center;
+
+        margin-top: auto;
+
+        padding-bottom: 3rem;
+        
+        @include tablet {
+            padding-bottom: 0rem;
+            justify-content: flex-end;
+        } 
+    }
+
+    &__button {
+
+        user-select: none;
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -o-user-select: none;
+
+        display: flex;
+        justify-content: center;
+        
+        border-radius: 1.25rem;
+        height: 1.375rem;
+        padding: .5rem 1rem;
+        color: $color-white;
+        text-align: center;
+        align-items: center;
+
+        width: 50%;
+
+        @include tablet {
+            width: auto;
+        } 
+
+        & > img {
+            height: 1.375rem;
+        }
+
+        & > p {
+            margin: 0;
+            padding-left: .25rem;
+            font-size: .875rem;
+            font-weight: 600;
+            line-height: 1.375rem;
+        }
+    
+
+        &--delete {
+            background-color: $color-red;
+            border: 2px solid $color-red;
+
+            margin-left: 0.5rem;
+
+            transition: 0.3s;
+
+            &:hover {
+                background-color: $color-graphite;
+                border-color: $color-graphite;
+            }
+        }
+
+        &--cancel {
+            color: $color-slate;
+            border: 2px solid $color-slate;
+            border-color: $color-cloud;
+
+            margin-right: 0.5rem;
+
+            transition: 0.3s;
+            &:hover {
+                color: $color-instock-indigo;
+                border-color: $color-instock-indigo;
+            }
+        }
+    }
+}

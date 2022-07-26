@@ -1,0 +1,37 @@
+@use '../../Styles/Partials/variables' as *;
+@use '../../Styles/Partials/mixins' as*;
+@use '../../Styles/Partials/fonts' as*;
+
+.warehouseList {
+
+    &__wrapper-container {
+        background-color: $color-white;
+        position: relative;
+        z-index: 1;
+        margin: -4rem 1rem 0;
+        box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+        border-radius: 3px;
+    }
+
+    @include tablet {
+        
+        &__wrapper-container {
+            margin: -5.75rem 2.25rem 0;
+        }
+
+        &__wrapper-subContainer > div{
+           
+            &:last-child{
+              border-bottom: none;
+            }
+        }
+    }
+
+    @include desktop {
+
+        &__wrapper-container {
+            margin: -5.75rem calc((100vw - 63.75rem) / 2) 0;
+        }
+    }
+}
+

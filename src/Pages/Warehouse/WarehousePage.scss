@@ -1,0 +1,7 @@
+@use '../../Styles/Partials/variables' as *;
+@use '../../Styles/Partials/mixins' as *;
+@use '../../Styles/Partials/fonts' as *;
+
+.component-wrapper {
+    background-color: $color-light-grey;
+}

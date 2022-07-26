@@ -1,0 +1,290 @@
+@use '../../Styles/Partials/variables' as *;
+@use '../../Styles/Partials/mixins' as *;
+@use '../../Styles/Partials/fonts' as *;
+
+input, textarea, select {
+    font-family: 'Titillium Web';
+    border: 1px solid $color-cloud;
+
+    &:focus, :focus-visible {
+        outline: none;
+        border: 1px solid $color-instock-indigo;
+    }
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: transparent;
+    background-image: url('../../Assets/Icons/arrow_drop_down-24px.svg');
+    background-repeat: no-repeat;
+    background-position-x: calc(100% - 10px);
+    background-position-y: 5px;
+}
+
+select:focus {
+    background-image: url('../../Assets/Icons/arrow_drop_down_active-24px.svg');
+}
+
+.warehouse-edit {
+    @include tablet {
+        padding: 1.5rem 2rem;
+        display: flex;
+        box-sizing: border-box;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        background-color: $color-white;
+        position: relative;
+        z-index: 1;
+        margin: -4rem 1rem 0;
+        box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+        border-radius: 3px;
+        
+        @include tablet {
+            margin: -5.75rem 2.25rem 0;
+        }
+
+        @include desktop {
+            margin: -5.75rem calc((100vw - 63.75rem) / 2) 0;
+        }
+    }
+
+    &__header {
+        &-wrapper {
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+            padding: 1.5rem 1rem;
+            border-bottom: 1px solid $color-cloud;
+
+            @include tablet {
+                padding: 2rem 2rem 1.255rem;
+            }
+
+            a {
+                text-decoration: none;
+                color: inherit;
+                cursor: pointer;
+                
+                &:visited {  
+                  color: inherit;
+                }
+            }
+        }
+
+        &-left {
+            display: flex;
+            align-items: center;
+        }
+
+    }
+
+    &__back {
+        height: 2.25rem;
+        width: 2.25rem;
+        background-image: url('../../Assets/Icons/arrow_back-24px.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        padding-right: .25rem;
+        margin: 0;
+    }
+
+    &__item {
+        font-size: 1.75rem;
+        line-height: 2.25rem;
+        margin: 0;
+        color: $color-instock-black;
+
+        @include tablet {
+            font-size: 2rem;
+            line-height: 2.5rem;
+        }
+    }
+
+    &__title {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+        margin: 0;
+        padding-bottom: 0.5rem;
+        color: $color-instock-black;
+
+        @include tablet {
+            font-size: 1.5rem;
+            line-height: 2rem;
+            padding: 0;
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__subtitle {
+        font-size: 0.813rem;
+        line-height: 1.25rem;
+        margin: 1rem 0 0.25rem;
+        color: $color-instock-black;
+        font-weight: 600;
+
+        @include tablet {
+            margin: 1.5rem 0 0.25rem;
+            font-size: 0.875rem;
+            line-height: 1.375rem;
+        }
+    }
+
+    &__left, &__right {
+        padding: 1rem 1.5rem 0;
+        
+        @include tablet {
+            padding: 0;
+            width: 50%;
+        }
+        
+    }
+
+    &__left {
+        @include tablet {
+            padding-right: 2rem;
+        }
+    }
+
+    &__right {
+        border-top: 1px solid $color-cloud;
+        padding-bottom: 1.5rem;
+        @include tablet {
+            border-top: none;
+            padding-bottom: 0;
+            padding-left: 2rem;
+            border-left: 1px solid $color-cloud;
+        }
+    }
+
+    &__right-top {
+            display: flex;
+            flex-direction: row;
+
+            @include tablet {
+                padding-bottom: 2rem;
+            }
+    }
+
+    &__input {
+        font-size: 0.813rem;
+        line-height: 1.25rem;
+        margin: 0;
+        padding: 0.5rem 1rem;
+        color: $color-instock-black;
+        width: 100%;
+        box-sizing: border-box;
+        border-radius: 20px;
+
+        @include tablet {
+            font-size: 0.875rem;
+            line-height: 1.375rem;
+        }
+        
+        &--last-row {
+            margin-bottom: 1.5rem;
+    
+            @include tablet {
+                margin: 0;
+            }
+        }
+    
+    }
+
+    &__button {
+        &-wrapper {
+            display: flex;
+            background-color: $color-light-grey;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            padding: 1rem 1.5rem;
+            border-bottom-left-radius: 3px;
+            border-bottom-right-radius: 3px;
+
+            @include tablet {
+                padding: 1rem 2rem;
+                justify-content: right;
+            }
+        }
+
+        font-size: 0.813rem;
+        line-height: 1.25rem;
+        margin: 0;
+        padding: 0.5rem 1rem;
+        width: 50%;
+        box-sizing: border-box;
+        border-radius: 20px;
+        text-align: center;
+        font-weight: 600;
+        cursor: pointer;
+        font-family: 'Titillium Web';
+
+
+        @include tablet {
+            font-size: 0.875rem;
+            line-height: 1.375rem;
+            width: auto;
+        }
+
+        &:focus, :focus-visible {
+            outline: none;
+        }
+
+        &-cancel {
+            background-color: $color-white;
+            border: 1px solid $color-cloud;
+            color: $color-slate;
+
+            &:hover {
+                border-color: $color-instock-indigo;
+                color: $color-instock-indigo;
+            }
+        }
+
+        &-save {
+            background-color: $color-instock-indigo;
+            color: $color-white;
+            border: none;
+
+            &:hover {
+                background-color: $color-graphite;
+            }
+        }
+    }
+
+    &__error {
+        color: $color-red;
+        font-size: .75rem;
+        line-height: 1.125rem;
+        display: flex;
+        align-items: center;
+        padding-top: .25rem;
+
+        & > img {
+            height: 1rem;
+            padding-right: .25rem;
+        }
+
+        & > p {
+            margin: 0;
+        }
+    }
+
+    &__hidden {
+        display: none;
+    }
+}
+
+.error-state {
+    border-color: $color-red;
+}

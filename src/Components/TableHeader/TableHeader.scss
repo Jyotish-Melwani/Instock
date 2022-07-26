@@ -1,0 +1,108 @@
+@use '../../Styles/Partials/variables' as *;
+@use '../../Styles/Partials/mixins' as*;
+@use '../../Styles/Partials/fonts' as*;
+
+.tableHeader{
+    display: none;
+
+    @include tablet {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: $color-light-grey;
+        padding: 0 1.5rem ;
+            
+        &__container{
+            display: flex;
+            padding: .5rem 0;
+
+            &--hidden{
+                display: none;
+            }
+        }
+
+        // HEADER STYLING ONLY FOR WAREHOUSELIST
+        &__warehouseList-container{
+            &--primary{
+                width: 15%;  
+            }
+            &--secondary{
+                width: 18%;
+            }
+            &--tertiary{
+                width: 20%;
+            }
+            &--quaternary{
+                width: 26%;
+            }
+            &--senary{
+                width: 9%;
+            }
+        }
+
+         // HEADER STYLING ONLY FOR INVENTORYLIST
+         &__inventoryList-container{
+            &--primary{
+                width: 19%;  
+            }
+            &--secondary{
+                width: 15%;
+            }
+            &--tertiary{
+                width: 15%;
+            }
+            &--quaternary{
+                width: 15%;
+            }
+            &--quinary{
+                width: 15%;
+            }
+            &--senary{
+                width: 9%;
+            }
+        }
+
+        // HEADER STYLING ONLY FOR WAREHOUSEDetails
+        &__warehouseDetails-container{
+            &--primary{
+                width: 25%;  
+            }
+            &--secondary{
+                width: 20%;
+            }
+            &--tertiary{
+                width: 20%;
+            }
+            &--quaternary{
+                width: 16%;
+            }
+            &--senary{
+                width: 9%;
+            }
+        }
+
+        &__title{
+            color: $color-slate;
+            font-size: .875rem;
+            font-weight: 600;
+            line-height: 1rem;
+            margin: 0;
+        }
+
+        &__icon{
+            height: 1rem;
+            &:hover{
+                cursor:pointer
+            }
+        }
+    }
+
+    @include desktop {
+
+        &__inventoryList-container{
+            &--senary{
+                width: 7%;
+            }
+        }
+    }
+}

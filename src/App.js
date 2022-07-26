@@ -1,18 +1,18 @@
-import "./App.scss";
+import "./Styles/App.scss";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-
+import WarehousePage from "./Pages/Warehouse/WarehousePage";
+import InventoryPage from "./Pages/Inventory/InventoryPage";
+import Footer from "./Components/Footer/Footer";
 
 function App() {
-  const defaultPrevent = (event) => {
-    event.preventDefault();
-  };
-
   return (
     <BrowserRouter>
-      <Header defaultPrevent={defaultPrevent} />
       <Switch>
-        {/* <Route exact path="/" component={MainPage} /> */}
+        <Route path='/' exact component={WarehousePage} />
+        <Route path='/warehouse' component={WarehousePage} />
+        <Route path='/inventory' component={InventoryPage} />
       </Switch>
+      <Footer />
     </BrowserRouter>
   );
 }

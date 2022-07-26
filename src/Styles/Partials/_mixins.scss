@@ -1,0 +1,53 @@
+@use './variables' as *;
+
+// MIXIN BREAKPOINTS
+
+@mixin mid-mobile-tablet {
+    @media screen and (min-width: $breakpoint_mid-mobile-tablet){
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (min-width: $breakpoint_tablet){
+        @content;
+    }
+}
+
+@mixin mid-tablet-desktop {
+    @media screen and (min-width: $breakpoint_mid-tablet-desktop){
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width: $breakpoint_desktop) {
+        @content;
+    }
+}
+
+
+// mixins
+
+@mixin button {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    line-height: 1.25rem;
+    text-align: center;
+    height: 2.25rem;
+    width: 100%;
+    padding: 0 1rem;
+    border-radius: 1.25rem;
+    border-style: none;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    @include tablet {
+        font-size: 0.875rem;
+        line-height: 1.375rem;
+        height: 2.375rem;
+        width: auto;
+    }
+} 

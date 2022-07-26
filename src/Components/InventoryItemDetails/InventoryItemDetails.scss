@@ -1,0 +1,229 @@
+@use '../../Styles/Partials/variables' as *;
+@use '../../Styles/Partials/mixins' as *;
+@use '../../Styles/Partials/fonts' as *;
+
+.inv-details {
+    @include tablet {
+        padding: 1.5rem 2rem;
+        display: flex;
+        box-sizing: border-box;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        background-color: $color-white;
+        position: relative;
+        z-index: 1;
+        margin: -4rem 1rem 0;
+        box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+        border-radius: 3px;
+        
+        @include tablet {
+            margin: -5.75rem 2.25rem 0;
+        }
+
+        @include desktop {
+            margin: -5.75rem calc((100vw - 63.75rem) / 2) 0;
+        }
+    }
+
+    &__header {
+        &-wrapper {
+            display: flex;
+            justify-content: space-between;
+            padding: 1.5rem 1rem;
+            border-bottom: 1px solid $color-cloud;
+
+            @include tablet {
+                padding: 2rem 2rem 1.255rem;
+            }
+
+            a {
+                text-decoration: none;
+                color: inherit;
+                cursor: pointer;
+                
+                &:visited {  
+                  color: inherit;
+                }
+            }
+        }
+
+        &-left {
+            display: flex;
+            align-items: center;
+        }
+
+    }
+
+    &__back {
+        height: 2.25rem;
+        width: 2.25rem;
+        background-image: url('../../Assets/Icons/arrow_back-24px.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        padding-right: .25rem;
+    }
+
+    &__item {
+        font-size: 1.75rem;
+        line-height: 2.25rem;
+        margin: 0;
+        color: $color-instock-black;
+
+        @include tablet {
+            font-size: 2rem;
+            line-height: 2.5rem;
+        }
+    }
+
+    &__edit {
+        display: none;
+        @include tablet {
+            display: flex;
+            background-color: $color-instock-indigo;
+            border-radius: 1.25rem;
+            height: 1.375rem;
+            padding: .5rem 1rem;
+            color: $color-white;
+            text-align: center;
+            align-items: center;
+
+            &:hover {
+                background-color: $color-graphite;
+            }
+
+            & > img {
+                height: 1.375rem;
+            }
+
+            & > p {
+                margin: 0;
+                padding-left: .25rem;
+                font-size: .875rem;
+                font-weight: 600;
+                line-height: 1.375rem;
+            }
+        }
+    }
+
+    &__edit-mobile {
+        background-color: $color-instock-indigo;
+        border-radius: 1.25rem;
+        height: 2.25rem;
+        width: 2.25rem;
+        background-image: url('../../Assets/Icons/edit-24px-white.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+
+        &:hover {
+            background-color: $color-graphite;
+        }
+        
+        @include tablet {
+            display: none;
+        }
+    }
+
+    &__subtitle {
+        font-size: 0.688rem;
+        line-height: 1rem;
+        margin: 1rem 0 0.25rem;
+        color: $color-slate;
+
+        @include tablet {
+            margin: 0;
+            font-size: .75rem;
+            line-height: 1.125rem;
+        }
+    }
+
+    &__left, &__right {
+        padding: 0 1.5rem;
+        
+        @include tablet {
+            padding: 0;
+            width: 50%;
+        }
+        
+    }
+
+    &__left {
+        @include tablet {
+            padding-right: 1.5rem;
+        }
+    }
+
+    &__right {
+        padding-bottom: 1.5rem;
+        @include tablet {
+            padding-bottom: 0;
+            padding-left: 2.25rem;
+            border-left: 1px solid $color-cloud;
+        }
+    }
+
+    &__right-top {
+            display: flex;
+            flex-direction: row;
+
+            @include tablet {
+                padding-bottom: 2rem;
+            }
+    }
+
+    &__description, &__category, &__quantity, &__warehouse {
+        font-size: 0.813rem;
+        line-height: 1.25rem;
+        margin: 0;
+        color: $color-instock-black;
+
+        @include tablet {
+            font-size: 0.875rem;
+            line-height: 1.375rem;
+        }
+    }
+
+    &__description {
+        @include tablet {
+            padding-bottom: 2rem;
+        }
+    }
+
+    &__status-wrapper, &__quantity-wrapper {
+        width: 50%;
+    } 
+
+    &__status {
+        height: 1.5rem;
+        padding: 0 .5rem;
+        border-radius: 1.25rem;
+        font-size: 0.813rem;
+        width: fit-content;
+        margin: 0;
+        font-weight: 600;
+        line-height: 1.5rem;
+
+        &-tag {
+            display: flex;
+            align-items: center;
+        }
+
+        @include tablet {
+            font-size: 0.875rem;
+            line-height: 1.625rem;
+            height: 1.625rem;
+        }
+    }
+}
+
+.instock {
+    color: $color-green;
+    background-color: rgba(21, 132, 99, 0.07);
+}
+
+.oos {
+    color: $color-red;
+    background-color: rgba(201, 69, 21, 0.07);
+}

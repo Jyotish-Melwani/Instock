@@ -1,0 +1,219 @@
+@use '../../Styles/Partials/variables';
+@use '../../Styles/Partials/mixins';
+
+.component-wrapper {
+  .add-warehouse {
+    width: 100%;
+
+    &__wrapper {
+      background-color: variables.$color-white;
+      position: relative;
+      z-index: 1;
+      margin: -4.75rem 1rem 0;
+      box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+      border-radius: 3px;
+
+      @include mixins.tablet {
+        margin: -5.75rem 2.25rem 0;
+      }
+
+      @include mixins.desktop {
+        margin: -5.75rem calc((100vw - 63.75rem) / 2) 0;
+      }
+      position: relative;
+      background-color: variables.$color-white;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__add-wh-header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 0 1.5rem;
+      border-bottom: 1px solid variables.$color-cloud;
+
+      @include mixins.tablet {
+        padding-left: 1rem;
+        border-bottom: 1px solid variables.$color-cloud;
+      }
+    }
+
+    &__add-wh-heading {
+      padding-left: 1rem;
+    }
+
+    &__wh-details {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__details-container {
+      display: flex;
+      flex-direction: column;
+      padding: 0 1.5rem;
+
+      @include mixins.tablet {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 1rem;
+      }
+    }
+
+    &__warehouse-form {
+      display: flex;
+      flex-direction: column;
+
+      @include mixins.tablet {
+        width: 50%;
+        padding: 0 1rem;
+        :before {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          height: 1px;
+          height: 70%;
+        }
+      }
+    }
+
+    &__warehouse-heading {
+      padding-left: 0.5rem;
+    }
+
+    &__contact-heading {
+      padding-left: 0.5rem;
+    }
+
+    &__contact-form {
+      display: flex;
+      flex-direction: column;
+
+      @include mixins.tablet {
+        width: 50%;
+        padding: 0 1rem;
+        border-left: 1px solid variables.$color-cloud;
+      }
+    }
+    &__button-section {
+      display: flex;
+      flex-direction: row;
+      background-color: variables.$color-light-grey;
+      padding: 0 1.5rem;
+
+      @include mixins.tablet {
+        justify-content: flex-end;
+      }
+    }
+  }
+
+  .add-wh {
+    &__form {
+      height: 1.7rem;
+      margin: 0.5rem 0.5rem;
+      border-radius: 1rem;
+      border-color: variables.$color-cloud;
+      box-shadow: none;
+      padding-left: 0.625rem;
+    }
+
+    &__form-error {
+      height: 1.7rem;
+      margin: 0.5rem 0.5rem;
+      border-radius: 1rem;
+      border-color: variables.$color-red;
+      box-shadow: none;
+      padding-left: 0.625rem;
+    }
+    .before-form {
+      border-color: variables.$color-cloud;
+    }
+  }
+
+  #submit-button {
+    color: variables.$color-white;
+    background-color: variables.$color-instock-indigo;
+    height: 2.5rem;
+    width: 45%;
+    margin: 2.5rem 0;
+    border-radius: 20px;
+    border: none;
+
+    &:hover {
+      cursor: pointer;
+      background-color: variables.$color-graphite;
+    }
+
+    @include mixins.tablet {
+      width: 20%;
+      margin: 1rem;
+    }
+
+    @include mixins.desktop {
+      width: 15%;
+      height: 2rem;
+    }
+  }
+
+  .cancel-link {
+    color: variables.$color-slate;
+    background-color: variables.$color-white;
+    text-decoration: none;
+    height: 2.5rem;
+    width: 45%;
+    margin: 2.5rem 1rem 2.5rem 0.5rem;
+
+    border-radius: 1.875rem;
+    border: 1px solid variables.$color-cloud;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    &:hover {
+      color: variables.$color-instock-indigo;
+      border-color: variables.$color-instock-indigo;
+    }
+
+    @include mixins.tablet {
+      width: 15%;
+      margin: 1rem;
+    }
+
+    @include mixins.desktop {
+      width: 10%;
+      height: 2rem;
+    }
+  }
+}
+
+.wh-form {
+  &__label {
+    margin-left: 0.5rem;
+  }
+}
+
+.error-msg {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 0.5rem;
+  height: 1.87rem;
+}
+
+.hidden-err-msg {
+  visibility: hidden;
+  height: 1.87rem;
+}
+.warning-text {
+  font-size: 0.81rem;
+  padding-left: 8px;
+  color: variables.$color-red;
+}
+
+.warning-icon {
+  height: 1.3rem;
+}

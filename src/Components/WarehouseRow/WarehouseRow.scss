@@ -1,0 +1,155 @@
+@use '../../Styles/Partials/variables' as *;
+@use '../../Styles/Partials/mixins' as*;
+@use '../../Styles/Partials/fonts' as*;
+
+.warehouseRow__text + img {
+    transition: transform .3s ease-out;
+}
+.warehouseRow__text:hover + img {
+    transform: translate(4px);
+}
+
+.warehouseRow{
+    padding: 0 1rem 1.5rem 1.5rem;
+    border-top: 2px solid $color-cloud;
+    display: flex;
+    flex-wrap: wrap;
+
+    &__container{
+        display: flex;
+        flex-direction: column;  
+
+        &--primary{
+            order: 1;
+            width: 45%;
+        }
+        &--secondary{
+            order: 3;
+            width: 45%;
+        }
+        &--tertiary{
+            order: 2;
+            width: 45%;
+        }
+        &--quaternary{
+            order: 4;
+            width: 55%;
+        }
+        &--senary{
+            order: 5;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-top: 1rem;
+        }
+    }
+
+    &__header{
+        color: $color-slate;
+        font-size: .6875rem;
+        font-weight: 600;
+        margin: 1rem 0 4px;
+    }
+
+    &__text{
+        font-size: .8125rem;
+        margin: 0;
+
+        &--primary{
+            color: $color-instock-indigo;
+            font-weight: 600;
+
+            &:hover{
+                text-decoration: underline;
+                cursor: pointer;
+            }
+        }
+    }
+
+    &__link{
+        display: flex;
+        width: fit-content;
+        text-decoration: none;
+    }
+
+    &__icon{     
+        height: 1.3rem;
+    }
+
+    &__image{
+        &:hover{
+            cursor:pointer
+        }
+    }
+
+    @include tablet{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        border-top: none;
+        border-bottom: 2px solid $color-cloud;
+        padding: 1rem 1.5rem;
+        height: 4rem;
+
+        &__container{
+            display: flex;
+   
+            &--primary{
+                order: 1;
+                width: 15%;  
+            }
+
+            &--secondary{
+                order: 2;
+                width: 18%;
+            }
+
+            &--tertiary{
+                order: 3;
+                width: 20%;
+            }
+
+            &--quaternary{
+                order: 4;
+                width: 26%;
+            }
+            
+            &--senary{
+                order: 5;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                margin-top: 0;
+                width: 9%;
+            }
+        }
+
+        &__header-container{
+            display: none;
+        }
+
+        &__text{
+            font-size: .875rem;    
+        }
+
+        &__image{
+            height: 1.5rem;
+        }
+    }
+
+    @include desktop {
+
+        &__container{
+          
+            &--secondary{
+                width: 20%;
+            }
+
+            &--quinary{
+                width: 4%;
+            }
+        }
+    }
+}

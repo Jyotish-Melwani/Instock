@@ -1,0 +1,120 @@
+@use '../../Styles/Partials/variables' as *;
+@use '../../Styles/Partials/mixins' as*;
+@use '../../Styles/Partials/fonts' as*;
+
+.searchHeader{
+
+    &__header-container{
+        display: flex;
+        flex-direction: column;
+        padding:  0 1.5rem 1.5rem 1.5rem ;
+    }
+
+    &__title-container{
+        margin: 2.5rem 0 1.5rem;
+    }
+
+    &__title{
+        font-size: 1.75rem ;
+        line-height: 1.5rem;
+        margin: 0;
+    }
+
+    &__input-container{
+        position: relative;
+        width: 100%;
+    }
+
+    &__input{
+        border: 1.5px solid $color-cloud;
+        border-radius: 20px;
+        font-family: "Titillium Web";
+        height: 2.25rem;
+        width: 100%;
+        text-indent: 1rem;
+        box-sizing: border-box;
+    }
+
+    &__input-icon{
+        position: absolute;
+        top: .4rem;
+        right: 1rem;
+    }
+
+    &__button-container{
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    &__button{
+        background-color: $color-instock-indigo;
+        border: none ;
+        border-radius: 20px;
+        color: $color-white;
+        font-family: 'Titillium Web';
+        font-weight: 600;
+        height: 2.25rem;
+        width: 100%;
+        &:hover{
+            cursor:pointer;
+            background-color: $color-graphite;
+        }
+    }
+
+    @include tablet{
+        
+        &__header-container{
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+            padding: 2.5rem 1.5rem 1.5rem;
+        }
+
+        &__title-container{
+            margin: 0;
+        }
+
+        &__title{
+            font-size: 2rem;
+        }
+
+        &__header-subContainer{
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            width: 100%;
+        }
+
+        &__input-container{
+            margin: 0 1rem;
+            width: 35%;
+        }
+
+        &__input{
+            height: 2.375rem;
+            font-size: .875rem;
+        }
+
+        &__button-container{
+            margin: 0;
+            width: 35%;
+        }
+
+        &__button{
+            height: 2.375rem;
+            font-size: 13px;
+        }
+    }
+
+    @include desktop{
+
+        &__input-container{
+            margin: 0 1rem;
+            width: 30%;
+        }
+
+        &__button-container{
+            width: 20%;
+        }
+    }
+}

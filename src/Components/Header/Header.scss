@@ -1,0 +1,77 @@
+@use '../../Styles/Partials/variables' as *;
+@use '../../Styles/Partials/mixins' as*;
+@use '../../Styles/Partials/fonts' as *;
+
+.page-header{
+    background-color:$color-graphite;
+    padding: 1.5rem 0 6rem ;
+    position: relative;
+
+    @include tablet {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-bottom: 7.5rem;
+    }
+
+    &__logo-wrapper{
+        width: 100%;
+        margin-bottom: 1.5rem;
+
+        @include tablet{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            width: auto;
+            margin: 0 1.5rem;
+        }
+
+        @include desktop {
+            margin: 0 11.25rem;
+        }
+    }
+
+    &__logo-img{
+        height:1.6rem;
+        width: 7.5rem;
+        display: block;
+        margin: 0 auto;
+
+    }
+
+    &__wrapper{
+        display: flex;
+        flex-direction: row;
+        margin: 0 1rem;
+
+        @include tablet {
+            margin: 0 1.5rem;
+        }
+
+        @include desktop {
+            margin: 0 11.25rem;
+        }
+    }
+
+    &__link{
+        @include button;
+        text-decoration: none;
+        color: $color-cloud;
+        line-height: 2.25rem;
+        
+        &:hover{
+            text-decoration: underline;
+            color: $color-white;
+        }
+
+        @include tablet{
+            width: auto;
+            line-height: 2.375rem;
+        }
+    }
+
+    &__link--active{
+        color: $color-white;
+        background-color:$color-instock-black ;
+    }
+}
