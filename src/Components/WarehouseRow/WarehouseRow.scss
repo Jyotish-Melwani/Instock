@@ -2,6 +2,13 @@
 @use '../../Styles/Partials/mixins' as*;
 @use '../../Styles/Partials/fonts' as*;
 
+.warehouseRow__text + img {
+    transition: transform .3s ease-out;
+}
+.warehouseRow__text:hover + img {
+    transform: translate(4px);
+}
+
 .warehouseRow{
     padding: 0 1rem 1.5rem 1.5rem;
     border-top: 2px solid $color-cloud;
