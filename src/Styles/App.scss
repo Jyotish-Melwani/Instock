@@ -8,10 +8,3 @@ body{
     margin: 0;
     padding: 0;
 }
-
-p + img {
-    transition: transform .3s ease-out;
-}
-p:hover + img {
-    transform: translate(4px);
-}
